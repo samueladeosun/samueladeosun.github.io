@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Ayomide Adeosun - Mathematical biologist</title>
+    <title>Samuel Ayomide Adeosun - Mathematical Biologist</title>
     <style>
         * {
             margin: 0;
@@ -17,9 +17,6 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 20px;
         }
 
@@ -27,28 +24,124 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
+            margin: 0 auto;
             padding: 60px 40px;
-            text-align: center;
         }
 
         h1 {
             color: #667eea;
             margin-bottom: 10px;
             font-size: 2.5em;
+            text-align: center;
         }
 
         .subtitle {
             color: #666;
             font-size: 1.1em;
             margin-bottom: 30px;
+            text-align: center;
         }
 
-        p {
+        .intro {
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             line-height: 1.8;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .interest-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .interest-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tech-stack {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-category {
+            margin-bottom: 15px;
+        }
+
+        .tech-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-category strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-badge {
+            background: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid #667eea;
+            color: #667eea;
+        }
+
+        .current-focus {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .focus-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .focus-list li {
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .focus-list li:before {
+            content: "→ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
         }
 
         .links {
@@ -80,38 +173,183 @@
             margin-top: 40px;
             padding-top: 30px;
             border-top: 2px solid #f0f0f0;
+            text-align: center;
         }
 
-        .social a {
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
             display: inline-block;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             padding: 0;
             border-radius: 50%;
             font-size: 20px;
-            line-height: 40px;
-            margin: 0 10px;
+            line-height: 45px;
+            background: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #764ba2;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .inspiration {
+            color: #555;
+            font-style: italic;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        .fun-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .fun-fact {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .timestamp {
+            color: #999;
+            font-size: 0.85em;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fun-facts {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Samuel Ayomide Adeosun</h1>
-        <p class="subtitle">PhD student | University of Freiburg </p>
+        <p class="subtitle">PhD Student | University of Freiburg</p>
         
-        <p>Welcome to my personal website. This is what I do.</p>
+        <p class="intro">Mathematical biologist passionate about understanding complex biological systems through quantitative modeling and stochastic processes.</p>
         
-        <div class="links">
-            <a href="https://github.com/samueladeosun">GitHub</a>
-            <a href="www.linkedin.com/in/samuel-ayomide-adeosun-5943521a7">LinkedIn</a>
-            <a href="samuel.adeosun@stochastik.uni-freiburg.de">Contact</a>
-            <a href="sammy_juveh">Instagram</a>
-            <a href="sammy_juveh">Twitter/X</a>
+        <!-- Research Interests -->
+        <div class="section">
+            <div class="section-title">🔬 Research Interests</div>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <strong>Stochastic Models</strong>
+                    <p>Applying stochastic processes to understand biological variability</p>
+                </div>
+                <div class="interest-item">
+                    <strong>Population Genetics</strong>
+                    <p>Modeling genetic variation and evolution in populations</p>
+                </div>
+                <div class="interest-item">
+                    <strong>Epidemiology</strong>
+                    <p>Disease dynamics and transmission modeling</p>
+                </div>
+            </div>
         </div>
 
-        <div class="social">
-            <p>Let us make impact together and leave the world better!</p>
+        <!-- Tech Stack -->
+        <div class="section">
+            <div class="section-title">💻 Tech Stack</div>
+            <div class="tech-stack">
+                <div class="tech-category">
+                    <strong>Languages</strong>
+                    <div class="tech-list">
+                        <span class="tech-badge">Python</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <strong>Tools & Frameworks</strong>
+                    <div class="tech-list">
+                        <span class="tech-badge">Git & GitHub</span>
+                        <span class="tech-badge">VS Code</span>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- Current Focus -->
+        <div class="section">
+            <div class="section-title">🎯 Current Focus</div>
+            <div class="current-focus">
+                <ul class="focus-list">
+                    <li>Modelling TE abundance</li>
+                    <li>Fast-slow processes</li>
+                    <li>Markov processes</li>
+                    <li>Martingale problems</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Personal Traits -->
+        <div class="section">
+            <div class="section-title">💡 About Me</div>
+            <div class="fun-facts">
+                <div class="fun-fact">
+                    <div>🔍</div>
+                    <p>I like to read and find things out</p>
+                </div>
+                <div class="fun-fact">
+                    <div>📚</div>
+                    <p>Always learning and exploring</p>
+                </div>
+                <div class="fun-fact">
+                    <div>🌍</div>
+                    <p>Travelling and speaking to strangers</p>
+                </div>
+                <div class="fun-fact">
+                    <div>☕</div>
+                    <p>Powered by coffee and curiosity</p>
+                </div>
+            </div>
+            <p class="inspiration">Let us make impact together and leave the world better!</p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="links">
+            <a href="https://github.com/samueladeosun">GitHub</a>
+            <a href="https://www.linkedin.com/in/samuel-ayomide-adeosun-5943521a7">LinkedIn</a>
+            <a href="mailto:samuel.adeosun@stochastik.uni-freiburg.de">Contact</a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social">
+            <p><strong>Connect with me on social media</strong></p>
+            <div class="social-links">
+                <a href="https://twitter.com/sammy_juveh" title="Twitter/X">𝕏</a>
+                <a href="https://instagram.com/sammy_juveh" title="Instagram">📷</a>
+                <a href="https://github.com/samueladeosun" title="GitHub">⚙️</a>
+            </div>
+        </div>
+
+        <p class="timestamp">Last Updated: June 2026</p>
     </div>
 </body>
 </html>
