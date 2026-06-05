@@ -33,15 +33,16 @@
             margin-bottom: 40px;
             border-bottom: 1px solid #ddd;
             padding-bottom: 30px;
+            gap: 20px;
         }
 
         .header-left {
             flex: 1;
+            min-width: 0;
         }
 
         .header-right {
             flex-shrink: 0;
-            margin-left: 30px;
         }
 
         h1 {
@@ -119,18 +120,37 @@
         }
 
         .publications-list {
-            padding-left: 20px;
             color: #555;
         }
 
         .publication-item {
-            margin: 15px 0;
-            line-height: 1.7;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            line-height: 1.8;
+        }
+
+        .publication-item strong {
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .publication-item .authors {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .publication-item .links {
+            margin-top: 10px;
         }
 
         .publication-item a {
             color: #667eea;
             text-decoration: none;
+            margin-right: 15px;
         }
 
         .publication-item a:hover {
@@ -188,11 +208,6 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-            }
-
-            .header-right {
-                margin-left: 0;
-                margin-top: 20px;
             }
 
             .profile-photo {
@@ -260,14 +275,14 @@
         <div class="section">
             <div class="section-title">Publications and Preprints</div>
             <div class="publications-list">
-                <p style="color: #999; font-style: italic;">Coming soon... Preprints and publications will be listed here.</p>
-                <!-- Add your publications here as they become available:
                 <div class="publication-item">
-                    <strong>Paper Title</strong><br>
-                    Authors: Samuel Ayomide Adeosun, et al.<br>
-                    <a href="#">arXiv:XXXX.XXXXX</a> | <a href="#">Journal Link</a>
+                    <strong>Markov processes forced on a subspace by a large drift, with applications to population genetics</strong>
+                    <div class="authors">Adeosun, S., Pfaffelhuber, P.</div>
+                    <div class="journal">Submitted. 2026.</div>
+                    <div class="links">
+                        <a href="https://arxiv.org/abs/2602.16342">arXiv:2602.16342</a>
+                    </div>
                 </div>
-                -->
             </div>
         </div>
 
