@@ -48,6 +48,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
+            z-index: 100;
         }
 
         .sidebar-header {
@@ -86,7 +87,7 @@
         }
 
         .sidebar-menu li {
-            margin: 15px 0;
+            margin: 12px 0;
         }
 
         .sidebar-menu a {
@@ -98,6 +99,7 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             display: block;
+            cursor: pointer;
         }
 
         .sidebar-menu a:hover {
@@ -158,6 +160,27 @@
             padding: 50px 60px;
             background: var(--main-bg);
             max-width: calc(100vw - 250px);
+            min-height: 100vh;
+        }
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .header {
@@ -331,6 +354,29 @@
             font-size: 0.95em;
         }
 
+        .award-item {
+            margin: 16px 0;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        .award-item:last-child {
+            border-bottom: none;
+        }
+
+        .award-item strong {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .award-year {
+            color: var(--accent);
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -431,13 +477,15 @@
             </div>
 
             <ul class="sidebar-menu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#teaching">Teaching</a></li>
-                <li><a href="#presentations">Presentations</a></li>
-                <li><a href="#conferences">Conferences</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#cv">CV</a></li>
+                <li><a onclick="showPage('home')" class="nav-link active">Home</a></li>
+                <li><a onclick="showPage('research')" class="nav-link">Research</a></li>
+                <li><a onclick="showPage('publications')" class="nav-link">Publications</a></li>
+                <li><a onclick="showPage('presentations')" class="nav-link">Presentations</a></li>
+                <li><a onclick="showPage('conferences')" class="nav-link">Conferences</a></li>
+                <li><a onclick="showPage('teaching')" class="nav-link">Teaching</a></li>
+                <li><a onclick="showPage('activities')" class="nav-link">Activities</a></li>
+                <li><a onclick="showPage('honours')" class="nav-link">Honours & Awards</a></li>
+                <li><a onclick="showPage('cv')" class="nav-link">CV</a></li>
             </ul>
 
             <div class="sidebar-footer">
@@ -451,12 +499,11 @@
                     <a href="https://orcid.org/0009-0008-6384-1460" title="ORCID" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            <text x="12" y="14" font-size="8" font-weight="bold" text-anchor="middle" fill="currentColor" font-family="Arial">iD</text>
                         </svg>
                     </a>
                     <a href="https://scholar.google.com/citations?user=CTVxaqAAAAAJ&hl=en" title="Google Scholar" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
                         </svg>
                     </a>
                     <a href="https://twitter.com/sammy_juveh" title="Twitter/X" target="_blank">
@@ -474,163 +521,213 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Header -->
-            <div id="home" class="header">
-                <h1>Samuel Ayomide Adeosun</h1>
-                <div class="subtitle">PhD Student in Mathematical Biology</div>
-                <p>Welcome to my webpage! I am a PhD student in mathematical biology at the <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, population genetics, and epidemiology.</p>
-            </div>
 
-            <!-- Contact Info -->
-            <div class="section">
-                <div class="section-title">Contact</div>
-                <div class="contact-info">
-                    <p><strong>Department of Mathematical Stochastics</strong><br>
-                    University of Freiburg<br>
-                    Ernst-Zermelo-Str. 1<br>
-                    79104 Freiburg, Germany</p>
-                    <p style="margin-top: 12px;"><strong>Email:</strong> <a href="mailto:samuel.adeosun@stochastik.uni-freiburg.de">samuel.adeosun@stochastik.uni-freiburg.de</a></p>
+            <!-- HOME PAGE -->
+            <div id="home" class="page-section active">
+                <div class="header">
+                    <h1>Samuel Ayomide Adeosun</h1>
+                    <div class="subtitle">PhD Student in Mathematical Biology</div>
+                    <p>Welcome to my webpage! I am a PhD student in mathematical biology at the <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, population genetics, and epidemiology.</p>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">Contact</div>
+                    <div class="contact-info">
+                        <p><strong>Department of Mathematical Stochastics</strong><br>
+                        University of Freiburg<br>
+                        Ernst-Zermelo-Str. 1<br>
+                        79104 Freiburg, Germany</p>
+                        <p style="margin-top: 12px;"><strong>Email:</strong> <a href="mailto:samuel.adeosun@stochastik.uni-freiburg.de">samuel.adeosun@stochastik.uni-freiburg.de</a></p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title">About</div>
+                    <p class="about-content">
+                        I am a PhD student in mathematical biology at the <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, population genetics, and epidemiology. My research focuses on understanding complex biological systems through quantitative modeling, particularly in stochastic models, fast-slow processes, Markov processes, and martingale problems.
+                    </p>
+                    <p class="about-content">
+                        My current research includes modelling TE (transposable element) abundance and their dynamics in biological systems. I am passionate about applying rigorous mathematical frameworks to solve real-world biological problems.
+                    </p>
+                    <ul class="highlights">
+                        <li>Stochastic processes and mathematical biology</li>
+                        <li>Population genetics and evolutionary dynamics</li>
+                        <li>Epidemiological modeling</li>
+                        <li>Markov chains and martingale theory</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- About Me -->
-            <div class="section">
-                <div class="section-title">About</div>
-                <p class="about-content">
-                    Currently, I am a PhD student in the <a href="https://uni-freiburg.de/stochastik/">probability group</a> within the <a href="https://uni-freiburg.de/math/">mathematical institute</a> of the University of Freiburg <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, population genetics, and epidemiology. My research focuses on understanding complex biological systems through quantitative modeling, particularly in stochastic models, fast-slow processes, Markov processes, and martingale problems.
-                </p>
-                <p class="about-content">
-                    My current research includes modelling TE (transposable element) abundance and their dynamics in biological systems. I am interested in developing and applying rigorous mathematical frameworks to understand and solve real-world biological problems.
-                </p>
-                <ul class="highlights">
-                    <li>Stochastic processes and mathematical biology</li>
-                    <li>Population genetics and evolutionary dynamics</li>
-                    <li>Epidemiological modeling (vector-borne diseases)</li>
-                    <li>Markov processes and martingale theory</li>
-                </ul>
+            <!-- RESEARCH PAGE -->
+            <div id="research" class="page-section">
+                <div class="header">
+                    <h1>Research Interests</h1>
+                    <div class="subtitle">Focus Areas</div>
+                </div>
+
+                <div class="section">
+                    <ul class="highlights">
+                        <li><strong>Stochastic Models:</strong> Applying stochastic processes to understand biological variability</li>
+                        <li><strong>Population Genetics:</strong> Modeling genetic variation and evolution in populations</li>
+                        <li><strong>Epidemiology:</strong> Disease dynamics and transmission modeling</li>
+                        <li><strong>Transposable Elements:</strong> Mathematical modeling of TE dynamics in biological systems</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Research Interests -->
-            <div id="research" class="section">
-                <div class="section-title">Research Interests</div>
-                <ul class="highlights">
-                    <li><strong>Deterministic Models:</strong> Investigated the impact of temperature and rainfall on malaria spread for my master's thesis</li>
-                    <li><strong>Stochastic Models:</strong> Applying stochastic processes to understand biological variability</li>
-                    <li><strong>Population Genetics:</strong> Modeling genetic variation and evolution in populations</li>
-                    <li><strong>Epidemiology:</strong>Disease dynamics and transmission modeling. I was an intern at <a href="https://icammda.org/research-projects/">ICAMMDA</a>/li>
-                </ul>
+            <!-- PUBLICATIONS PAGE -->
+            <div id="publications" class="page-section">
+                <div class="header">
+                    <h1>Publications & Preprints</h1>
+                    <div class="subtitle">Academic Contributions</div>
+                </div>
+
+                <div class="section">
+                    <ul class="item-list">
+                        <li>
+                            <span class="item-authors">Adeosun, S., Pfaffelhuber, P.</span>
+                            <a href="https://arxiv.org/abs/2602.16342" target="_blank">Markov processes forced on a subspace by a large drift, with applications to population genetics.</a>
+                            <span class="item-journal">Submitted. 2026.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Publications and Preprints -->
-            <div class="section">
-                <div class="section-title">Publications & Preprints</div>
-                <ul class="item-list">
-                    <li>
-                        <span class="item-authors">Adeosun, S., Pfaffelhuber, P.</span>
-                        <a href="https://arxiv.org/abs/2602.16342" target="_blank">Markov processes forced on a subspace by a large drift, with applications to population genetics.</a>
-                        <span class="item-journal">Submitted. 2026.</span>
-                    </li>
-                </ul>
+            <!-- PRESENTATIONS PAGE -->
+            <div id="presentations" class="page-section">
+                <div class="header">
+                    <h1>Presentations & Posters</h1>
+                    <div class="subtitle">Oral Presentations and Poster Sessions</div>
+                </div>
+
+                <div class="section">
+                    <ul class="item-list">
+                        <li>
+                            <a href="https://pfaffelh.github.io/interacting-2025/" target="_blank">A stochastic model for biased inheritance of transposable elements in diploid populations.</a>
+                            <span class="item-year">Poster presentation. March 2025. Dynamics of interacting populations and beyond, Seefeld, Austria.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Presentations and Posters -->
-            <div id="presentations" class="section">
-                <div class="section-title">Presentations & Posters</div>
-                <ul class="item-list">
-                    <li>
-                        <a href="https://pfaffelh.github.io/interacting-2025/" target="_blank">A stochastic model for biased inheritance of transposable elements in diploid populations.</a>
-                        <span class="item-year">Poster presentation. March 2025. Dynamics of interacting populations and beyond, Baltic Sea, Travemünde.</span>
-                    </li>
-                </ul>
+            <!-- CONFERENCES PAGE -->
+            <div id="conferences" class="page-section">
+                <div class="header">
+                    <h1>Conferences Attended</h1>
+                    <div class="subtitle">Conference Participation</div>
+                </div>
+
+                <div class="section">
+                    <ul class="item-list">
+                        <li>
+                            <a href="https://icte2024.sciencesconf.org/" target="_blank">International Congress on Transposable Elements (ICTE).</a>
+                            <span class="item-year">Paris, France. 2024.</span>
+                        </li>
+                        <li>
+                            <a href="https://www.b-tu.de/fg-wirtschaftsmathematik/forschung/konferenzen/dts2024/overview" target="_blank">Doktorand::Innentreffen der Stochastik (DTS).</a>
+                            <span class="item-year">Cottbus, Germany. 2024.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Conferences Attended -->
-            <div id="conferences" class="section">
-                <div class="section-title">Conferences Attended</div>
-                <ul class="item-list">
-                    <li>
-                        <a href="https://icte2024.sciencesconf.org/" target="_blank">International Congress on Transposable Elements (ICTE).</a>
-                        <span class="item-year">Saint-Malo, France. 2024.</span>
-                    </li>
-                    <li>
-                        <a href="https://www.b-tu.de/fg-wirtschaftsmathematik/forschung/konferenzen/dts2024/overview" target="_blank">Doktorand::Innentreffen der Stochastik (DTS).</a>
-                        <span class="item-year">BTU Cottbus, Germany. 2024.</span>
-                    </li>
-                </ul>
+            <!-- TEACHING PAGE -->
+            <div id="teaching" class="page-section">
+                <div class="header">
+                    <h1>Teaching</h1>
+                    <div class="subtitle">Teaching Experience and Courses</div>
+                </div>
+
+                <div class="section">
+                    <ul class="teaching-list">
+                        <li class="teaching-item">
+                            <strong>Current Teaching</strong><br>
+                            <span style="color: var(--text-gray); font-style: italic;">Coming soon...</span>
+                        </li>
+                        <li class="teaching-item">
+                            <strong>Previous Teaching</strong><br>
+                            <span style="color: var(--text-gray); font-style: italic;">Previous teaching experience will be listed here.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- Teaching -->
-            <div id="teaching" class="section">
-                <div class="section-title">Teaching</div>
-                <ul class="teaching-list">
-                    <li class="teaching-item">
-                        <strong>Current Teaching</strong><br>
-                        <span style="color: var(--text-gray); font-style: italic;">Coming soon...</span>
-                    </li>
-                    <li class="teaching-item">
-                        <strong>Previous Teaching</strong><br>
-                        <span style="color: var(--text-gray); font-style: italic;">Previous teaching experience will be listed here.</span>
-                    </li>
-                </ul>
+            <!-- ACTIVITIES PAGE -->
+            <div id="activities" class="page-section">
+                <div class="header">
+                    <h1>Activities & Engagement</h1>
+                    <div class="subtitle">Academic and Professional Engagement</div>
+                </div>
+
+                <div class="section">
+                    <p style="color: var(--text-gray); font-style: italic;">Academic engagement and activities coming soon...</p>
+                </div>
             </div>
 
-            <!-- Activities -->
-            <div id="activities" class="section">
-                <div class="section-title">Activities & Engagement</div>
-                <p style="color: var(--text-gray); font-style: italic;">Academic engagement and activities coming soon...</p>
+            <!-- HONOURS & AWARDS PAGE -->
+            <div id="honours" class="page-section">
+                <div class="header">
+                    <h1>Honours & Awards</h1>
+                    <div class="subtitle">Recognition and Achievements</div>
+                </div>
+
+                <div class="section">
+                    <ul class="teaching-list">
+                        <li class="award-item">
+                            <strong>Award/Honour Name</strong><br>
+                            <span class="award-year">Year - Organization</span>
+                            <p style="margin-top: 8px; color: var(--text-gray);">Brief description of the award or honour.</p>
+                        </li>
+                    </ul>
+                    <p style="color: var(--text-gray); font-style: italic; margin-top: 20px;">Honours and awards will be listed here as you receive them.</p>
+                </div>
             </div>
 
-            <!-- Technical Skills -->
-            <div class="section">
-                <div class="section-title">Technical Skills</div>
-                <ul class="highlights">
-                    <li><strong>Programming:</strong> Python</li>
-                    <li><strong>Tools:</strong> Git & GitHub, VS Code</li>
-                </ul>
+            <!-- CV PAGE -->
+            <div id="cv" class="page-section">
+                <div class="header">
+                    <h1>Curriculum Vitae</h1>
+                    <div class="subtitle">Full CV</div>
+                </div>
+
+                <div class="section">
+                    <p style="color: var(--text-gray); font-style: italic;">CV document coming soon...</p>
+                </div>
             </div>
 
-            <!-- CV Section -->
-            <div id="cv" class="section">
-                <div class="section-title">CV</div>
-                <p style="color: var(--text-gray); font-style: italic;">CV coming soon...</p>
-            </div>
         </main>
     </div>
 
     <script>
-        // Smooth scroll and active menu item
-        document.querySelectorAll('.sidebar-menu a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelectorAll('.sidebar-menu a').forEach(a => a.classList.remove('active'));
-                this.classList.add('active');
-                
-                const target = this.getAttribute('href');
-                const element = document.querySelector(target);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Set active menu item on page load and scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('[id]');
-            let current = '';
-            
+        function showPage(pageId) {
+            // Hide all page sections
+            const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
+                section.classList.remove('active');
             });
 
-            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+            // Show the selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            // Update active navigation item
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
             });
+
+            // Set the clicked link as active
+            event.target.classList.add('active');
+
+            // Scroll to top of page
+            window.scrollTo(0, 0);
+        }
+
+        // Set home page as active on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
         });
     </script>
 </body>
