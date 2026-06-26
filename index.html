@@ -377,6 +377,29 @@
             font-size: 0.95em;
         }
 
+        /* TO DO List Styles */
+        .todo-item {
+            margin: 12px 0;
+            padding: 12px;
+            background: rgba(212, 165, 116, 0.05);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            color: var(--text-gray);
+        }
+
+        .todo-item strong {
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .todo-status {
+            font-size: 0.9em;
+            color: var(--accent);
+            font-style: italic;
+            margin-top: 5px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -478,13 +501,13 @@
 
             <ul class="sidebar-menu">
                 <li><a onclick="showPage('home')" class="nav-link active">Home</a></li>
-                <li><a onclick="showPage('research')" class="nav-link">Research</a></li>
                 <li><a onclick="showPage('publications')" class="nav-link">Publications</a></li>
                 <li><a onclick="showPage('presentations')" class="nav-link">Presentations</a></li>
                 <li><a onclick="showPage('conferences')" class="nav-link">Conferences</a></li>
                 <li><a onclick="showPage('teaching')" class="nav-link">Teaching</a></li>
                 <li><a onclick="showPage('honours')" class="nav-link">Honours & Awards</a></li>
                 <li><a onclick="showPage('cv')" class="nav-link">CV</a></li>
+                <li><a onclick="showPage('todo')" class="nav-link">TO DO</a></li>
             </ul>
 
             <div class="sidebar-footer">
@@ -526,7 +549,7 @@
                 <div class="header">
                     <h1>Samuel Ayomide Adeosun</h1>
                     <div class="subtitle">PhD Student in Mathematical Biology</div>
-                    <p>Welcome to my webpage! I am a PhD student in mathematical biology at the <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, population genetics, and epidemiology.</p>
+                    <p>Welcome to my webpage! I am a PhD student in mathematical biology at the <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, population genetics and mathematical modeling of biological systems.</p>
                 </div>
 
                 <div class="section">
@@ -543,33 +566,16 @@
                 <div class="section">
                     <div class="section-title">About</div>
                     <p class="about-content">
-                        Currently, I am a PhD student in the <a href="https://uni-freiburg.de/stochastik/">department of mathematical stochastics</a> within the <a href="https://uni-freiburg.de/math/">mathematical institute</a> of the <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, population genetics, and epidemiology.
+                        Currently, I am a PhD student in the <a href="https://uni-freiburg.de/stochastik/">department of mathematical stochastics</a> within the <a href="https://uni-freiburg.de/math/">mathematical institute</a>, working under the supervision of <a href="https://www.stochastik.uni-freiburg.de/en/pfaffelhuber">Prof. Peter Pfaffelhuber</a>.
                     </p>
                     <p class="about-content">
-                        My current research focuses on modelling TE (transposable element) abundance and their dynamics in biological systems. I am interested in developing and applying rigorous mathematical frameworks to understand and solve real-world biological problems.
+                        My current research focuses on modelling TE (transposable element) abundance and their dynamics in biological systems. I am interested in developing and applying rigorous mathematical frameworks to solve real-world biological problems.
                     </p>
                     <ul class="highlights">
                         <li>Stochastic population genetic models. Currently utilising the biparental Moran model</li>
                         <li>Population genetics and evolutionary dynamics of TEs</li>
                         <li>Markov processes and martingale problems</li>
                         <li>Epidemiological modeling. I used the SIR model to investigate the impact of temperature and rainfall on malaria spread in Nigeria for my Master's thesis</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- RESEARCH PAGE -->
-            <div id="research" class="page-section">
-                <div class="header">
-                    <h1>Research Interests</h1>
-                    <div class="subtitle">Focus Areas</div>
-                </div>
-
-                <div class="section">
-                    <ul class="highlights">
-                        <li><strong>Stochastic Models:</strong> Applying stochastic processes to understand biological variability</li>
-                        <li><strong>Population Genetics:</strong> Modeling genetic variation and evolution in populations</li>
-                        <li><strong>Epidemiology:</strong> Disease dynamics and transmission modeling</li>
-                        <li><strong>Transposable Elements:</strong> Mathematical modeling of TE dynamics in biological systems</li>
                     </ul>
                 </div>
             </div>
@@ -679,6 +685,46 @@
 
                 <div class="section">
                     <p style="color: var(--text-gray); font-style: italic;">CV document coming soon...</p>
+                </div>
+            </div>
+
+            <!-- TO DO PAGE -->
+            <div id="todo" class="page-section">
+                <div class="header">
+                    <h1>TO DO List</h1>
+                    <div class="subtitle">Upcoming sections and improvements</div>
+                </div>
+
+                <div class="section">
+                    <div class="todo-item">
+                        <strong>📚 Research Interests</strong>
+                        <p>Detailed overview of main research focus areas including stochastic models, population genetics, epidemiology, and transposable elements.</p>
+                        <div class="todo-status">Status: Coming soon</div>
+                    </div>
+
+                    <div class="todo-item">
+                        <strong>🎓 Activities & Engagement</strong>
+                        <p>Academic engagement, seminars, workshops, and other professional activities.</p>
+                        <div class="todo-status">Status: Coming soon</div>
+                    </div>
+
+                    <div class="todo-item">
+                        <strong>💻 Technical Skills</strong>
+                        <p>Programming languages, tools, and technical competencies.</p>
+                        <div class="todo-status">Status: Coming soon</div>
+                    </div>
+
+                    <div class="todo-item">
+                        <strong>📄 PDF Downloads</strong>
+                        <p>Add downloadable CV, research documents, and other publications.</p>
+                        <div class="todo-status">Status: In progress</div>
+                    </div>
+
+                    <div class="todo-item">
+                        <strong>🔗 Additional Resources</strong>
+                        <p>Links to repositories, datasets, and supplementary materials.</p>
+                        <div class="todo-status">Status: Coming soon</div>
+                    </div>
                 </div>
             </div>
 
