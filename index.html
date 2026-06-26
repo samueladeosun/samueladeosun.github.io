@@ -13,15 +13,22 @@
         }
 
         :root {
-            --primary: #667eea;
-            --primary-dark: #764ba2;
+            --primary: #7c3aed;
+            --primary-light: #a78bfa;
+            --primary-dark: #6d28d9;
+            --accent: #ec4899;
+            --sidebar-bg: #faf8f3;
+            --main-bg: #f5f3ed;
+            --text-dark: #2d1b4e;
+            --text-light: #6b5b7d;
+            --border-color: #e9dff2;
         }
 
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
             line-height: 1.6;
-            color: #333;
-            background: #f9f9f9;
+            color: var(--text-dark);
+            background: var(--main-bg);
             padding: 0;
             margin: 0;
         }
@@ -34,8 +41,8 @@
         /* Sidebar Navigation */
         .sidebar {
             width: 250px;
-            background: white;
-            border-right: 1px solid #ddd;
+            background: var(--sidebar-bg);
+            border-right: 2px solid var(--border-color);
             padding: 40px 20px;
             position: fixed;
             height: 100vh;
@@ -52,23 +59,29 @@
         .profile-photo-sidebar {
             width: 150px;
             height: 180px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.15);
             object-fit: cover;
             margin: 0 auto 15px;
             display: block;
+            border: 3px solid var(--primary-light);
         }
 
         .sidebar-header h2 {
             font-size: 1.2em;
-            color: #333;
+            color: var(--text-dark);
             margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .sidebar-header p {
             font-size: 0.85em;
-            color: #666;
+            color: var(--text-light);
             font-style: italic;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .sidebar-menu {
@@ -82,29 +95,31 @@
         }
 
         .sidebar-menu a {
-            color: #333;
+            color: var(--text-dark);
             text-decoration: none;
             font-size: 1.1em;
             font-weight: 500;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 10px 12px;
+            border-radius: 8px;
             transition: all 0.3s ease;
             display: block;
         }
 
         .sidebar-menu a:hover {
-            background: #f0f0f0;
+            background: rgba(124, 58, 237, 0.1);
             color: var(--primary);
         }
 
         .sidebar-menu a.active {
-            background: #e8e8e8;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%);
             color: var(--primary);
-            font-weight: bold;
+            font-weight: 600;
+            border-left: 3px solid var(--primary);
+            padding-left: 9px;
         }
 
         .sidebar-footer {
-            border-top: 1px solid #ddd;
+            border-top: 2px solid var(--border-color);
             padding-top: 20px;
         }
 
@@ -121,17 +136,18 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 18px;
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
         }
 
         .social-icons a:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px) scale(1.1);
+            transform: translateY(-4px) scale(1.15);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
         }
 
         .social-icons svg {
@@ -144,27 +160,32 @@
             margin-left: 250px;
             flex: 1;
             padding: 40px;
-            background: white;
+            background: var(--main-bg);
             max-width: calc(100vw - 250px);
         }
 
         .header {
             margin-bottom: 50px;
             padding-bottom: 30px;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 3px solid var(--primary-light);
         }
 
         .header h1 {
             font-size: 2.5em;
-            color: #333;
+            color: var(--text-dark);
             margin-bottom: 10px;
             font-weight: bold;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .header .subtitle {
             font-size: 1.3em;
             color: var(--primary);
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .section {
@@ -172,16 +193,16 @@
         }
 
         .section-title {
-            color: #333;
+            color: var(--text-dark);
             font-size: 1.5em;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 20px;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 3px solid var(--primary-light);
             padding-bottom: 10px;
         }
 
         .contact-info {
-            color: #555;
+            color: var(--text-light);
             line-height: 1.8;
             font-size: 0.95em;
         }
@@ -193,14 +214,17 @@
         .contact-info a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         .contact-info a:hover {
+            color: var(--accent);
             text-decoration: underline;
         }
 
         .about-content {
-            color: #555;
+            color: var(--text-light);
             line-height: 1.8;
             margin-bottom: 15px;
             text-align: justify;
@@ -209,9 +233,12 @@
         .about-content a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         .about-content a:hover {
+            color: var(--accent);
             text-decoration: underline;
         }
 
@@ -222,57 +249,76 @@
 
         .highlights li {
             margin: 8px 0;
-            color: #555;
+            color: var(--text-light);
         }
 
         .highlights a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         .highlights a:hover {
+            color: var(--accent);
             text-decoration: underline;
         }
 
         .publication-item {
             margin: 20px 0;
-            padding: 15px;
-            background: #f9f9f9;
+            padding: 20px;
+            background: white;
             border-left: 4px solid var(--primary);
             line-height: 1.8;
-            border-radius: 4px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(124, 58, 237, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.15);
+            transform: translateY(-2px);
         }
 
         .publication-item strong {
-            color: #333;
+            color: var(--text-dark);
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .publication-item .authors {
             font-size: 0.95em;
-            color: #666;
+            color: var(--text-light);
             margin-bottom: 8px;
         }
 
         .publication-item .journal {
             font-size: 0.9em;
-            color: #888;
+            color: var(--primary-light);
             margin-bottom: 10px;
+            font-style: italic;
         }
 
         .publication-item .links {
-            margin-top: 10px;
+            margin-top: 12px;
+            display: flex;
+            gap: 15px;
         }
 
         .publication-item a {
             color: var(--primary);
             text-decoration: none;
-            margin-right: 15px;
+            font-weight: 500;
+            padding: 6px 12px;
+            background: rgba(124, 58, 237, 0.1);
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
 
         .publication-item a:hover {
-            text-decoration: underline;
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--accent);
         }
 
         .teaching-list {
@@ -281,11 +327,12 @@
 
         .teaching-item {
             margin: 10px 0;
-            color: #555;
+            color: var(--text-light);
         }
 
         .teaching-item strong {
-            color: #333;
+            color: var(--text-dark);
+            font-weight: 600;
         }
 
         /* Responsive */
@@ -299,7 +346,7 @@
                 width: 100%;
                 height: auto;
                 border-right: none;
-                border-bottom: 1px solid #ddd;
+                border-bottom: 2px solid var(--border-color);
                 padding: 20px;
             }
 
@@ -429,7 +476,7 @@
             <div id="home" class="header">
                 <h1>Samuel Ayomide Adeosun</h1>
                 <div class="subtitle">PhD Student in Mathematical Biology</div>
-                <p style="color: #666; font-size: 1em; margin-top: 10px;">
+                <p style="color: var(--text-light); font-size: 1em; margin-top: 10px;">
                     Welcome to my webpage! I am a PhD student in mathematical biology at the 
                     <a href="https://www.uni-freiburg.de/">University of Freiburg</a>, interested in stochastic processes, 
                     population genetics, and epidemiology.
