@@ -307,6 +307,122 @@
             color: var(--primary-dark);
         }
 
+        .presentation-item {
+            margin: 20px 0;
+            padding: 18px;
+            background: #ffffff;
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .presentation-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .presentation-item .title {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .presentation-item .details {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .presentation-item .meta {
+            font-size: 0.9em;
+            color: #888;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .presentation-item .meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .presentation-item .meta i {
+            color: var(--primary);
+        }
+
+        .presentation-item .link {
+            margin-top: 10px;
+        }
+
+        .presentation-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .presentation-item a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .conference-item {
+            margin: 18px 0;
+            padding: 16px;
+            background: #ffffff;
+            border-left: 4px solid #999;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .conference-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            transform: translateY(-1px);
+            border-left-color: var(--primary);
+        }
+
+        .conference-item .name {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .conference-item .details {
+            font-size: 0.95em;
+            color: #666;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .conference-item .details span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .conference-item .details i {
+            color: var(--primary);
+            font-size: 0.9em;
+        }
+
+        .conference-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .conference-item a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
         .teaching-list {
             padding-left: 20px;
         }
@@ -359,11 +475,13 @@
                 display: flex;
                 gap: 10px;
                 margin-bottom: 15px;
+                flex-wrap: wrap;
             }
 
             .sidebar-menu li {
                 margin: 0;
                 flex: 1;
+                min-width: 80px;
             }
 
             .sidebar-menu a {
@@ -374,6 +492,12 @@
 
             .about-content {
                 text-align: left;
+            }
+
+            .presentation-item .meta,
+            .conference-item .details {
+                flex-direction: column;
+                gap: 8px;
             }
         }
 
@@ -422,6 +546,9 @@
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#presentations">Presentations</a></li>
+                <li><a href="#conferences">Conferences</a></li>
+                <li><a href="#activities">Activities</a></li>
                 <li><a href="#cv">CV</a></li>
             </ul>
 
@@ -529,11 +656,66 @@
                 </div>
             </div>
 
+            <!-- Presentations and Posters -->
+            <div id="presentations" class="section">
+                <div class="section-title">Presentations & Posters</div>
+                
+                <div class="presentation-item">
+                    <div class="title">📊 A stochastic model for biased inheritance of transposable elements in diploid populations</div>
+                    <div class="details"><strong>Poster Presentation</strong></div>
+                    <div class="meta">
+                        <span><i class="fas fa-calendar"></i> March 2025</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Seefeld, Austria</span>
+                    </div>
+                    <div class="link">
+                        <a href="https://pfaffelh.github.io/interacting-2025/" target="_blank">Conference: Dynamics of interacting populations and beyond →</a>
+                    </div>
+                </div>
+
+                <p style="color: #999; font-style: italic; margin-top: 20px;">More presentations and posters coming soon...</p>
+            </div>
+
+            <!-- Conferences Attended -->
+            <div id="conferences" class="section">
+                <div class="section-title">Conferences Attended</div>
+                
+                <div class="conference-item">
+                    <div class="name">International Congress on Transposable Elements (ICTE)</div>
+                    <div class="details">
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+                    </div>
+                    <div>
+                        <a href="https://icte2024.sciencesconf.org/" target="_blank">icte2024.sciencesconf.org →</a>
+                    </div>
+                </div>
+
+                <div class="conference-item">
+                    <div class="name">Doktorand::Innentreffen der Stochastik (DTS)</div>
+                    <div class="details">
+                        <span><i class="fas fa-calendar"></i> 2024</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Cottbus, Germany</span>
+                    </div>
+                    <div>
+                        <a href="https://www.b-tu.de/fg-wirtschaftsmathematik/forschung/konferenzen/dts2024/overview" target="_blank">BTU Cottbus Senftenberg →</a>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- Current Teaching -->
             <div id="teaching" class="section">
                 <div class="section-title">Current Teaching</div>
                 <div class="teaching-list">
                     <p style="color: #999; font-style: italic;">Teaching information coming soon...</p>
+                </div>
+            </div>
+
+            <!-- Activities -->
+            <div id="activities" class="section">
+                <div class="section-title">Activities & Other Engagement</div>
+                <div class="teaching-list">
+                    <p style="color: #999; font-style: italic;">Activities and academic engagement coming soon...</p>
                 </div>
             </div>
 
