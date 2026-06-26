@@ -377,29 +377,6 @@
             font-size: 0.95em;
         }
 
-        /* TO DO List Styles */
-        .todo-item {
-            margin: 12px 0;
-            padding: 12px;
-            background: rgba(212, 165, 116, 0.05);
-            border-left: 3px solid var(--accent);
-            border-radius: 4px;
-            color: var(--text-gray);
-        }
-
-        .todo-item strong {
-            color: var(--text-light);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .todo-status {
-            font-size: 0.9em;
-            color: var(--accent);
-            font-style: italic;
-            margin-top: 5px;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .container {
@@ -507,7 +484,6 @@
                 <li><a onclick="showPage('teaching')" class="nav-link">Teaching</a></li>
                 <li><a onclick="showPage('honours')" class="nav-link">Honours & Awards</a></li>
                 <li><a onclick="showPage('cv')" class="nav-link">CV</a></li>
-                <li><a onclick="showPage('todo')" class="nav-link">TO DO</a></li>
             </ul>
 
             <div class="sidebar-footer">
@@ -685,46 +661,6 @@
 
                 <div class="section">
                     <p style="color: var(--text-gray); font-style: italic;">CV document coming soon...</p>
-                </div>
-            </div>
-
-            <!-- TO DO PAGE -->
-            <div id="todo" class="page-section">
-                <div class="header">
-                    <h1>TO DO List</h1>
-                    <div class="subtitle">Upcoming sections and improvements</div>
-                </div>
-
-                <div class="section">
-                    <div class="todo-item">
-                        <strong>📚 Research Interests</strong>
-                        <p>Detailed overview of main research focus areas including stochastic models, population genetics, epidemiology, and transposable elements.</p>
-                        <div class="todo-status">Status: Coming soon</div>
-                    </div>
-
-                    <div class="todo-item">
-                        <strong>🎓 Activities & Engagement</strong>
-                        <p>Academic engagement, seminars, workshops, and other professional activities.</p>
-                        <div class="todo-status">Status: Coming soon</div>
-                    </div>
-
-                    <div class="todo-item">
-                        <strong>💻 Technical Skills</strong>
-                        <p>Programming languages, tools, and technical competencies.</p>
-                        <div class="todo-status">Status: Coming soon</div>
-                    </div>
-
-                    <div class="todo-item">
-                        <strong>📄 PDF Downloads</strong>
-                        <p>Add downloadable CV, research documents, and other publications.</p>
-                        <div class="todo-status">Status: In progress</div>
-                    </div>
-
-                    <div class="todo-item">
-                        <strong>🔗 Additional Resources</strong>
-                        <p>Links to repositories, datasets, and supplementary materials.</p>
-                        <div class="todo-status">Status: Coming soon</div>
-                    </div>
                 </div>
             </div>
 
