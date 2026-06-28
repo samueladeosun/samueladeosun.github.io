@@ -43,7 +43,7 @@ I'm currently working on:
 🔍 I like to read and find things out
 📚 Always learning and exploring
 🎮 Traveling and speaking to strangers
-☕ Powered by coffee and curiosity
+☕ Powered by curiosity
 
 ---
 
