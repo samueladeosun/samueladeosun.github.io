@@ -38,6 +38,3 @@ I'm currently working on:
 - Advanced Markov process applications
 - Martingale problem formulations
 
----
-
-**Last Updated:** June 2026
