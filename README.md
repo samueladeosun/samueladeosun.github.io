@@ -1,10 +1,10 @@
 # Samuel Ayomide Adeosun's Portfolio
 
-Welcome to my personal portfolio website! This is where I showcase my work, projects, and passion for mathematical biology and computational modeling.
+Welcome to my personal portfolio website! This is where I showcase my work, projects, and passion for mathematical modelling and computational modeling.
 
 ## 🎯 About Me
 
-I'm **Samuel Ayomide Adeosun**, a mathematical biologist with a focus on stochastic models, population genetics, and epidemiology. I'm driven by curiosity and love exploring complex biological systems through mathematical frameworks.
+I'm **Samuel Ayomide Adeosun**, a biomathematician with a focus on stochastic models, population genetics, and epidemiology. I'm driven by curiosity and love exploring complex biological systems through mathematical frameworks.
 
 ## 🚀 Research Interests
 
@@ -37,13 +37,6 @@ I'm currently working on:
 - Fast-slow processes in biological systems
 - Advanced Markov process applications
 - Martingale problem formulations
-
-## 💡 Philosophy
-
-🔍 I like to read and find things out
-📚 Always learning and exploring
-🎮 Traveling and speaking to strangers
-☕ Powered by curiosity
 
 ---
 
